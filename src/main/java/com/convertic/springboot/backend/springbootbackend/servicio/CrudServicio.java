@@ -7,4 +7,5 @@ public interface CrudServicio <T>{
     public T findById(Integer id) throws Exception;
     public T save(T t) throws Exception;
     public T update(Integer id,T t) throws Exception;
+    public T login(String correoelectronico,String contrasena) throws Exception;
 }

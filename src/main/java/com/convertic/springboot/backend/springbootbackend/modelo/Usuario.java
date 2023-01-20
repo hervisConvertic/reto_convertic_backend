@@ -15,9 +15,10 @@ public class Usuario implements Serializable {
     private String nombre2;
     private String apellido1;
     private String apellido2;
-    private String correo_electronico;
+    @Column(name="correo_electronico")
+    private String correoelectronico;
     private String contrasena;
-
+    
     public int getId() {
         return id;
     }
@@ -75,11 +76,11 @@ public class Usuario implements Serializable {
     }
 
     public String getCorreo_electronico() {
-        return correo_electronico;
+        return correoelectronico;
     }
 
     public void setCorreo_electronico(String correo_electronico) {
-        this.correo_electronico = correo_electronico;
+        this.correoelectronico = correo_electronico;
     }
 
     public String getContrasena() {
@@ -88,5 +89,20 @@ public class Usuario implements Serializable {
 
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id=" + id +
+                ", id_tipo_documento=" + id_tipo_documento +
+                ", numero_documento='" + numero_documento + '\'' +
+                ", nombre1='" + nombre1 + '\'' +
+                ", nombre2='" + nombre2 + '\'' +
+                ", apellido1='" + apellido1 + '\'' +
+                ", apellido2='" + apellido2 + '\'' +
+                ", correoelectronico='" + correoelectronico + '\'' +
+                ", contrasena='" + contrasena + '\'' +
+                '}';
     }
 }

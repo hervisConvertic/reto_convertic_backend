@@ -55,4 +55,14 @@ public class UsuarioServicio implements CrudServicio<Usuario>{
     public Usuario update(Integer id, Usuario usuario) throws Exception {
         return null;
     }
+
+    @Override
+    public Usuario login(String correo_electronico, String contrasena) throws Exception {
+        try {
+            Usuario usuario=iUsuarioRepositorio.findByCorreoelectronicoAndContrasena(correo_electronico,contrasena);
+            return usuario;
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
 }
